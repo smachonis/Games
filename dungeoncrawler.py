@@ -539,13 +539,24 @@ while True:
                 player.lives -= 1
                 if player.lives <= 0:
                     player.goto(1000,1000)
-                    game.update_score()
                     print("Game Over")
                 else:
                     player.hp = player.maxhp
                     player.goto(player_start[0][0], player_start[0][1])
-                    game.update_score()
-        
+            else:
+                if player.last_dir == "left":
+                    player.go_right()
+                    player.go_right()
+                elif player.last_dir == "right":
+                    player.go_left()
+                    player.go_left()
+                elif player.last_dir == "up":
+                    player.go_down()
+                    player.go_down()
+                elif player.last_dir == "down":
+                    player.go_up()
+                    player.go_up()
+            game.update_score()
         if goblin.is_collision(bolt):
             if goblin.hp > 1:
                 goblin.hp -= 1
@@ -565,13 +576,24 @@ while True:
                 player.lives -= 1
                 if player.lives <= 0:
                     player.goto(1000,1000)
-                    game.update_score()
                     print("Game Over")
                 else:
                     player.hp = player.maxhp
                     player.goto(player_start[0][0], player_start[0][1])
-                    game.update_score()
-
+            else:
+                if player.last_dir == "left":
+                    player.go_right()
+                    player.go_right()
+                elif player.last_dir == "right":
+                    player.go_left()
+                    player.go_left()
+                elif player.last_dir == "up":
+                    player.go_down()
+                    player.go_down()
+                elif player.last_dir == "down":
+                    player.go_up()
+                    player.go_up()
+            game.update_score()
         
         if blackhole.is_collision(bolt):
             if blackhole.hp > 1:
